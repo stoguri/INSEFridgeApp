@@ -1,0 +1,24 @@
+{
+  "name": "insefridgeapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoguri/ISNEFridgeApp.git"
+  },
+  "author": "Nikolas Markides",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stoguri/ISNEFridgeApp/issues"
+  },
+  "homepage": "https://github.com/stoguri/ISNEFridgeApp#readme"
+}
