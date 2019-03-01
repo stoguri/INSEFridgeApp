@@ -12,7 +12,7 @@ body{
   overflow:hidden;
 }
 .containerBox{
-  
+
   width: 350px;
   border: 5px solid black ;
   padding: 100px;
@@ -68,6 +68,23 @@ header a{
   text-transform: uppercase;
   font-size:16px;
 
+}
+/* Style buttons */
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 16px 32px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  margin-right: 700px;
+  margin-bottom: 20px;
+
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
 }
 
 header li{
