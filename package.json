@@ -1,10 +1,11 @@
 {
   "name": "insefridgeapp",
   "version": "1.0.0",
-  "description": "",
   "main": "index.html",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql": "github:mysqljs/mysql"
   },
   "devDependencies": {},
   "scripts": {
@@ -20,5 +21,7 @@
   "bugs": {
     "url": "https://github.com/stoguri/ISNEFridgeApp/issues"
   },
-  "homepage": "https://github.com/stoguri/ISNEFridgeApp#readme"
+  "homepage": "https://github.com/stoguri/ISNEFridgeApp#readme",
+  "keywords": [],
+  "description": ""
 }
