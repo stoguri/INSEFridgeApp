@@ -31,18 +31,41 @@
 
     <section id = "ItemList">
       <div class="containerBox">
-        <p> Items in fridge: </p>
-        <div class="item">
+        <p> <b> ITEMS IN FRIDGE:</b> </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p> <b>INSERT ITEM:</b></p>
+        <form>
+        Item Name:<br>
+        <input type="text" name="firstname">
+        <br>
+
+        Quantity (between 1 and 100):
+        <input type="number" name="quantity" min="1" max="100"><br>
+
+
+
+        Enter an expiry date 00/00/0000:
+        <input type="date" name="expiry"><br>
+
+         <input type="submit" value="Submit">
+
+        </form>
+          <div class="item">
 
       </div>
     </section>
-
     <section id="showcase">
-      <div class="calendar">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en-gb.uk%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Europe%2FLondon"
-        style="border-width:0" width="500" height="300" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </section>
+        <div class="calendar">
+          <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23FFFFFF&src=en-gb.uk%23holiday%40group.v.calendar.google.com&color=%23125A12&ctz=Europe%2FLondon"
+          style="border-width:0" width="500" height="300" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </section>
+
+
 
     <section id="newsletter">
       <div class="container">
@@ -65,5 +88,6 @@
     <footer>
       <p>Team3B, Copyright &copy; 2019</p>
     </footer>
+
   </body>
 </html>
