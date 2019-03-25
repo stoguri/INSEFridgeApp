@@ -6,37 +6,56 @@
     <meta name="description" content="">
 	  <meta name="keywords" content="">
   	<meta name="author" content="">
-    <title>DashBoard | Welcome</title>
+    <title>SmartFridge | Welcome</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header>
-
+<!-- banner section and nav bar-->
       <img src="images/banner1.jpg">
       <div class="container">
         <div id="branding">
 
-          <h1><span class="highlight">WEL</span>COME</h1>
+          <h1><span class="highlight">DASH</span>BOARD</h1>
+
         </div>
         <nav>
           <ul>
             <button class="btn"><i class="fa fa-home"></i><a href="index.html">HOME</a></button>
-
-
           </ul>
+
         </nav>
       </div>
     </header>
 
+    <!-- google sign in, sign out -->
+              <meta name="google-signin-client_id" content="850391124116-57e6rd61b09gcp2u8tk2jhrjdnmiso35.apps.googleusercontent.com">
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+              <script src="https://apis.google.com/js/platform.js" async defer></script>
+              <div class="signOut"<a href="#" onclick="signOut();">Sign out</a>
+              <script>
+                function signOut() {
+                  var auth2 = gapi.auth2.getAuthInstance();
+                  auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                  });  }
+              </script>
+            </div>
+
+
+
+<!-- section for the user to enter the items in fridge, and item handling -->
     <section id = "ItemList">
       <div class="containerBox">
         <p> <b> ITEMS IN FRIDGE:</b> </p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <ol>
+          <li>    Coca Cola * 5  <br> </li>
+          <li>    Piece of Chicken * 3  <br> </li>
+          <li>    Orange Juice * 2      <br> </li>
+          <li>    Water 1.5L * 2           </li>
+
+        </ol>
         <p> <b>INSERT ITEM:</b></p>
         <form>
         Item Name:<br>
@@ -53,20 +72,32 @@
 
          <input type="submit" value="Submit">
 
+
+         <p> <b> DELETE ITEM: </b> <p>
+
         </form>
           <div class="item">
 
       </div>
     </section>
-    <section id="showcase">
-        <div class="calendar">
-          <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23FFFFFF&src=en-gb.uk%23holiday%40group.v.calendar.google.com&color=%23125A12&ctz=Europe%2FLondon"
-          style="border-width:0" width="500" height="300" frameborder="0" scrolling="no"></iframe>
+
+
+    
+    <!--second image next to calendar -->
+        <div class="image2">
+        <img src="images/knife.jpg">
         </div>
-      </section>
+
+    <!-- google calendar -->
+        <section id="showcase">
+            <div class="calendar">
+              <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23FFFFFF&src=en-gb.uk%23holiday%40group.v.calendar.google.com&color=%23125A12&ctz=Europe%2FLondon"
+              style="border-width:0" width="600" height="300" frameborder="0" scrolling="no"></iframe>
+            </div>
+          </section>
 
 
-
+<!--branding, subscribe to our newsletter section-->
     <section id="newsletter">
       <div class="container">
         <h1>Subscribe To Our Newsletter</h1>
