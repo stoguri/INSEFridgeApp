@@ -73,7 +73,13 @@ th, td {
   padding: 15px;
 }
 
-
+.inputFood  {
+  text-align: left ;
+  padding: 45vh;
+  color: white;
+  text-decoration: none;
+  font-size: 2vh;
+}
 
 
 
