@@ -1,0 +1,45 @@
+<html>
+  <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <meta name="description" content="Insert Food HTML Page">
+   <meta name="keywords" content="">
+	 <meta name="author" content="Hartej Sohanpall UP843827">
+   <title>SmartFridge | Insert Food</title>
+   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+   <link rel="stylesheet" href="insertFoodStyle.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ </head>
+
+ <body>
+   <div id="FridgeAppGrid" class="grid">
+     <div class="navbar">
+       <a href="#"><i class="fa fa-home"></i> Home</a>
+       <a class="active" href="#"><i class="fa fa-cutlery"></i> Insert Food</a>
+       <a href="#"><i class="fa fa-calendar"></i> Set Reminder Time</a>
+       <a href="#"><i class="fa fa-trash"></i> Remove Food</a>
+     </div>
+
+  <div id="InsertFood" class="inputFood">
+    Food Name: <input type="text" name="FoodName"><br>
+    Quatity: <select id="Quantity"><br>
+               <option value = "1">1</option>
+               <option value = "2">2</option>
+               <option value = "3">3</option>
+               <option value = "4">4</option>
+               <option value = "5">5</option>
+               <option value = "6">6</option>
+               <option value = "7">7</option>
+               <option value = "8">8</option>
+               <option value = "9">9</option>
+               <option value = "10">10</option>
+               <option value = ">10">more than 10</option>
+            </select><br>
+    Expiry Date <input type="text" name="ExpiryDate"><br>
+    <input type="submit" value="Finish">
+    </div>
+
+
+
+    <script src="./InsertFood.js"></script>
+  </body>
