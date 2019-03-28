@@ -72,6 +72,9 @@ ul{
   margin-top:10px;
   margin-bottom:10px;
 }
+.navbar{
+  margin-left: 500px;
+}
 
 /* Header, banner image handling **/
 header{

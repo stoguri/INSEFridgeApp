@@ -20,12 +20,13 @@
           <h1><span class="highlight">DASH</span>BOARD</h1>
 
         </div>
-        <nav>
-          <ul>
-            <button class="btn"><i class="fa fa-home"></i><a href="index.html">HOME</a></button>
-          </ul>
-
-        </nav>
+        <div id="FridgeAppGrid" class="grid">
+          <div class="navbar">
+            <a class="active" href="#"><i class="fa fa-home"></i> Home</a>
+            <a href="InsertFood.html"><i class="fa fa-cutlery"></i> Insert Food</a>
+            <a href="SetReminder.html"><i class="fa fa-calendar"></i> Set Reminder Time</a>
+            <a href="#"><i class="fa fa-trash"></i> Remove Food</a>
+          </div>
       </div>
     </header>
 
@@ -45,44 +46,7 @@
 
 
 
-<!-- section for the user to enter the items in fridge, and item handling -->
-    <section id = "ItemList">
-      <div class="containerBox">
-        <p> <b> ITEMS IN FRIDGE:</b> </p>
-        <ol>
-          <li>    Coca Cola * 5  <br> </li>
-          <li>    Piece of Chicken * 3  <br> </li>
-          <li>    Orange Juice * 2      <br> </li>
-          <li>    Water 1.5L * 2           </li>
 
-        </ol>
-        <p> <b>INSERT ITEM:</b></p>
-        <form>
-        Item Name:<br>
-        <input type="text" name="firstname">
-        <br>
-
-        Quantity (between 1 and 100):
-        <input type="number" name="quantity" min="1" max="100"><br>
-
-
-
-        Enter an expiry date 00/00/0000:
-        <input type="date" name="expiry"><br>
-
-         <input type="submit" value="Submit">
-
-
-         <p> <b> DELETE ITEM: </b> <p>
-
-        </form>
-          <div class="item">
-
-      </div>
-    </section>
-
-
-    
     <!--second image next to calendar -->
         <div class="image2">
         <img src="images/knife.jpg">
