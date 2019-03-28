@@ -1,34 +1,60 @@
 'use strict'
 
-const one = document.getElementById('one');
-const two = document.getElementById('two');
-const three = document.getElementById('three');
-const four = document.getElementById('four');
-const five = document.getElementById('five');
-const six = document.getElementById('six');
-const seven = document.getElementById('seven');
-const eight = document.getElementById('eight');
-const nine = document.getElementById('nine');
-const zero = document.getElementById('zero');
-const userInput = document.getElementById('NumPadInput').textContent ;
-
-window.addEventListener('load', init);
-
-function init() {
-  one.addEventListener('click', addOne);
-  two.addEventListener('click', addTwo);
-  three.addEventListener('click', addThree);
-  four.addEventListener('click', addFour);
-  five.addEventListener('click', addFive);
-  six.addEventListener('click', addSix);
-  seven.addEventListener('click', addSeven);
-  eight.addEventListener('click', addEight);
-  nine.addEventListener('click', addNine);
-  zero.addEventListener('click', addZero);
-}
+const textBox = document.getElementById("NumPadInput");
+const keypad1 = document.getElementById("one").addEventListener('click', addOne);
+const keypad2 = document.getElementById("two").addEventListener('click', addTwo);
+const keypad3 = document.getElementById("three").addEventListener('click', addThree);
+const keypad4 = document.getElementById("four").addEventListener('click', addFour);
+const keypad5 = document.getElementById("five").addEventListener('click', addFive);
+const keypad6 = document.getElementById("six").addEventListener('click', addSix);
+const keypad7 = document.getElementById("seven").addEventListener('click', addSeven);
+const keypad8 = document.getElementById("eight").addEventListener('click', addEight);
+const keypad9 = document.getElementById("nine").addEventListener('click', addNine);
+const keypad0 = document.getElementById("zero").addEventListener('click', addZero);
+const keypadDelete = document.getElementById("deleteNum").addEventListener('click', deleteNumbers);
+const keypadEnter = document.getElementById("enter").addEventListener('click', sendData);
 
 
 function addOne() {
-  let value = '1' ;
-  userInput += value;
+  textBox.textContent += "1";
+}
+
+function addTwo() {
+  textBox.textContent += "2";
+}
+
+function addThree() {
+  textBox.textContent += "3";
+}
+
+function addFour() {
+  textBox.textContent += "4";
+}
+
+function addFive() {
+  textBox.textContent += "5";
+}
+
+function addSix() {
+  textBox.textContent += "6";
+}
+
+function addSeven() {
+  textBox.textContent += "7";
+}
+
+function addEight() {
+  textBox.textContent += "8";
+}
+
+function addNine() {
+  textBox.textContent += "9";
+}
+
+function addZero() {
+  textBox.textContent += "0";
+}
+
+function deleteNumbers() {
+  textBox.textContent = "";
 }
