@@ -76,7 +76,7 @@ th, td {
 .inputFood  {
   text-align: left ;
   padding: 45vh;
-  color: white;
+  text: white;
   text-decoration: none;
   font-size: 2vh;
 }
