@@ -3,7 +3,7 @@
 document.getElementById('DropdownButton').addEventListener('click', showDropDown);
 document.getElementById('Recent').addEventListener('click', sortRecent);
 document .getElementById('Alphabetical').addEventListener('click', sortAlphabetical);
-document.getElementById('Quantity').addEventListener('click', sortQuantity);
+document.getElementById('quantity').addEventListener('click', sortQuantity);
 
 
 /*toggle between hiding and showing the dropdown content */
@@ -23,65 +23,61 @@ window.onclick = function(event) {
       }
     }
   }
+}
 
-  async function sortQuantity() {
-    try {
-      let url = '/index?sort=quantity'
-      const response = await fetch(url);
-      if (!response.ok) throw response;
-      putListInPage(await response.json());
-    } catch (e) {
-      console.error('error getting contents of fridge', e);
-
-    }
+async function sortQuantity() {
+  try {
+    let url = '/index?sort=quantity'
+    const response = await fetch(url);
+    if (!response.ok) throw response;
+    putListInPage(await response.json());
+  } catch (e) {
+    console.error('error getting contents of fridge', e);
   }
+}
 
-  async function sortRecent() {
-    try {
-      let url = '/index?sort=mostRecent';
-      const response = await fetch(url);
-      if (!response.ok) throw response;
-      putListInPage(await response.json());
-    } catch(e) {
-      console.error('error getting contents of fridge', e);
-    }
-
+async function sortRecent() {
+  try {
+    let url = '/index?sort=mostRecent';
+    const response = await fetch(url);
+    if (!response.ok) throw response;
+    putListInPage(await response.json());
+  } catch(e) {
+    console.error('error getting contents of fridge', e);
   }
+}
 
-  async function sortAlphabetical() {
-    try {
-      let url = '/index?sort=alphabetical';
-      const response = await fetch(url);
-      if (!response.ok) throw response;
-      putListInPage(await response.json());
-    } catch(e) {
-      console.error('error getting contents of fridge', e);
-    }
-
+async function sortAlphabetical() {
+  try {
+    let url = '/index?sort=alphabetical';
+    const response = await fetch(url);
+    if (!response.ok) throw response;
+    putListInPage(await response.json());
+  } catch(e) {
+    console.error('error getting contents of fridge', e);
   }
+}
 
-  function putListInPage(sortedList) {
-    let old = document.getElementsByClassName('row');
-    old.remove();
-    for (i in sortedList) {
-      let newRow = document.createElement("tr");
-      newRow.classList.add("row")
-      let counter = 1
-      for (let j = 0; j < 3; j++) {
-        if (counter = 1) {
-          let newCell = document.createElement('td');
-          let cellText = document.createTextNode(sortedList.name);
-        }
-        else if (counter = 2) {
-          let newCell = document.createElement('td');
-          let cellText = document.createTextNode(sortedList.quantity);
-        } else {
-          let newCell = document.createElement('td');
-          let cellText = document.createTextNode(sortedList.expiry);
-        }
+function putListInPage(sortedList) {
+  let old = document.getElementsByClassName('row');
+  old.remove();
+  for (i in sortedList) {
+    let newRow = document.createElement("tr");
+    newRow.classList.add("row")
+    let counter = 1
+    for (let j = 0; j < 3; j++) {
+      if (counter = 1) {
+        let newCell = document.createElement('td');
+        let cellText = document.createTextNode(sortedList.name);
       }
-      foodTable.appendChild(newRow);
+      else if (counter = 2) {
+        let newCell = document.createElement('td');
+        let cellText = document.createTextNode(sortedList.quantity);
+      } else {
+        let newCell = document.createElement('td');
+        let cellText = document.createTextNode(sortedList.expiry);
+      }
     }
+    foodTable.appendChild(newRow);
   }
-
 }
