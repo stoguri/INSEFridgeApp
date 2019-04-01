@@ -1,7 +1,7 @@
 {
   "name": "insefridgeapp",
   "version": "1.0.0",
-  "main": "index.html",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
@@ -23,5 +23,5 @@
   },
   "homepage": "https://github.com/stoguri/ISNEFridgeApp#readme",
   "keywords": [],
-  "description": ""
+  "description": "fridge app"
 }

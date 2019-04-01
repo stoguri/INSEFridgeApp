@@ -27,10 +27,11 @@ window.onclick = function(event) {
 
 async function sortQuantity() {
   try {
-    let url = '/index?sort=quantity'
+    let url = '/index/sort/quantity'
     const response = await fetch(url);
     if (!response.ok) throw response;
-    putListInPage(await response.json());
+    const data = await response.json()
+    putListInPage(data);
   } catch (e) {
     console.error('error getting contents of fridge', e);
   }
@@ -38,10 +39,11 @@ async function sortQuantity() {
 
 async function sortRecent() {
   try {
-    let url = '/index?sort=mostRecent';
+    let url = '/index/sort/recent';
     const response = await fetch(url);
     if (!response.ok) throw response;
-    putListInPage(await response.json());
+    const data = await response.json()
+    putListInPage(data);
   } catch(e) {
     console.error('error getting contents of fridge', e);
   }
@@ -49,10 +51,11 @@ async function sortRecent() {
 
 async function sortAlphabetical() {
   try {
-    let url = '/index?sort=alphabetical';
+    let url = '/index/sort/alphabetical';
     const response = await fetch(url);
     if (!response.ok) throw response;
-    putListInPage(await response.json());
+    const data = await response.json()
+    putListInPage(data);
   } catch(e) {
     console.error('error getting contents of fridge', e);
   }
@@ -68,14 +71,14 @@ function putListInPage(sortedList) {
     for (let j = 0; j < 3; j++) {
       if (counter = 1) {
         let newCell = document.createElement('td');
-        let cellText = document.createTextNode(sortedList.name);
+        let cellText = document.createTextNode(sortedList[i].name);
       }
       else if (counter = 2) {
         let newCell = document.createElement('td');
-        let cellText = document.createTextNode(sortedList.quantity);
+        let cellText = document.createTextNode(sortedList[i].quantity);
       } else {
         let newCell = document.createElement('td');
-        let cellText = document.createTextNode(sortedList.expiry);
+        let cellText = document.createTextNode(sortedList[i].expiry);
       }
     }
     foodTable.appendChild(newRow);
