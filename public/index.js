@@ -4,6 +4,7 @@ document.getElementById('DropdownButton').addEventListener('click', showDropDown
 document.getElementById('Recent').addEventListener('click', sortRecent);
 document .getElementById('Alphabetical').addEventListener('click', sortAlphabetical);
 document.getElementById('quantity').addEventListener('click', sortQuantity);
+document.addEventListener('load', sortAlphabetical);
 
 
 /*toggle between hiding and showing the dropdown content */
@@ -25,6 +26,8 @@ window.onclick = function(event) {
   }
 }
 
+
+//function to make requests to server for the array of food objects sorted by type.
 async function sortQuantity() {
   try {
     let url = '/index/sort/quantity'
@@ -61,26 +64,26 @@ async function sortAlphabetical() {
   }
 }
 
+//Deletes old list of food and inserts new list.
 function putListInPage(sortedList) {
-  let old = document.getElementsByClassName('row');
-  old.remove();
-  for (i in sortedList) {
-    let newRow = document.createElement("tr");
-    newRow.classList.add("row")
-    let counter = 1
-    for (let j = 0; j < 3; j++) {
-      if (counter = 1) {
-        let newCell = document.createElement('td');
-        let cellText = document.createTextNode(sortedList[i].name);
-      }
-      else if (counter = 2) {
-        let newCell = document.createElement('td');
-        let cellText = document.createTextNode(sortedList[i].quantity);
-      } else {
-        let newCell = document.createElement('td');
-        let cellText = document.createTextNode(sortedList[i].expiry);
-      }
-    }
-    foodTable.appendChild(newRow);
+  //delete old rows in <tbody>
+  for (const old of document.querySelectorAll('tr.row')) {
+    old.remove();
+  }
+
+  //create new rows and inserts them into <tbody>
+  for (let i in sortedList) {
+    const newRow = document.createElement("tr");
+    newRow.classList.add('row');
+    const nameCell = document.createElement("td");
+    nameCell.textContent = sortedList[i].name ;
+    const quantityCell = document.createElement("td");
+    quantityCell.textContent = sortedList[i].quantity;
+    const expiryCell = document.createElement("td");
+    expiryCell.textContent =sortedList[i].expiry;
+    newRow.appendChild(nameCell);
+    newRow.appendChild(quantityCell);
+    newRow.appendChild(expiryCell);
+    document.getElementById('tBody').appendChild(newRow);
   }
 }
