@@ -1,4 +1,4 @@
-# ISNEFridgeApp
+# INSEFridgeApp
 
 
 SmartFridge Application:
