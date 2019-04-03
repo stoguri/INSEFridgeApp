@@ -13,34 +13,24 @@
 
  <body>
    <div id="FridgeAppGrid" class="grid">
-     <div class="navbar">
-       <a href="index.html"><i class="fa fa-home"></i> Home</a>
-       <a href="InsertFood.html"><i class="fa fa-cutlery"></i> Insert Food</a>
-       <a class="active" href="SetReminder.html"><i class="fa fa-calendar"></i> Set Reminder Time</a>
-       <a href="DeleteFood.html"><i class="fa fa-trash"></i> Remove Food</a>
-     </div>
+    <div class="navbar">
+      <a href="index.html"><i class="fa fa-home"></i> Home</a>
+      <a href="InsertFood.html"><i class="fa fa-cutlery"></i> Insert Food</a>
+      <a class="active" href="SetReminder.html"><i class="fa fa-calendar"></i> Set Reminder Time</a>
+      <a href="DeleteFood.html"><i class="fa fa-trash"></i> Remove Food</a>
+    </div>
 
 
-     <div id="contentGrid" class="grid2">
-       <div class="buttons">
-         <div class="button" id="one">1</div>
-         <div class="button" id="two">2</div>
-         <div class="button" id="three">3</div>
-         <div class="button" id="four">4</div>
-         <div class="button" id="five">5</div>
-         <div class="button" id="six">6</div>
-         <div class="button" id="seven">7</div>
-         <div class="button" id="eight">8</div>
-         <div class="button" id="nine">9</div>
-         <div class="button" id="deleteNum">Delete</div>
-         <div class="button" id="zero">0</div>
-         <div class="button" id="enter">Enter</div>
-       </div>
-
-       <div id="NumPadInput" class="NumPadOutput"></div>
-     </div>
-   </div>
- </body>
+    <div class="container">
+      <div id="instructions">Select the number of days before expiry date's that you are reminded</div>
+      <form class="form-style-6" action="/SetReminder" method="POST">
+        <input type="number" name="days" value="1" min="0" max="21">
+        <input type="submit" name="submit" value="Finish">
+      </form>
+    </div>
+  </div>
+ </div>
+</body>
 
 <script src="./SetReminder.js"></script>
 </html>
