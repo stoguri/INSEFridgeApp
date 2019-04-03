@@ -1,24 +1,21 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+//create application/json parser
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+
 
 app.use(express.static('public'));
 app.use('/', (req, res, next) => { console.log(new Date(), req.method, req.url); next(); });
 
 
 let foodInFridge = [
-  {
-    name: "apple",
-    quantity: "1",
-    expiry: "05/05/19"
-  },
-  {
-    name:"milk",
-    quantity: "5",
-    expiry: "10/04/2019"
-  }
+
 ]
 
 // handles requests made on the /index path.
@@ -30,7 +27,13 @@ app.get('/index/sort/:sortType', function (req, res) {
   } catch(e) {
     console.error();
   }
+});
 
+app.post('/inputFood', urlencodedParser, function(req, res) {
+  let request = req.body;
+  console.log(request);
+  foodInFridge.unshift(request);
+  res.redirect('/InsertFood.html');
 });
 
 

@@ -4,7 +4,7 @@ document.getElementById('DropdownButton').addEventListener('click', showDropDown
 document.getElementById('Recent').addEventListener('click', sortRecent);
 document .getElementById('Alphabetical').addEventListener('click', sortAlphabetical);
 document.getElementById('quantity').addEventListener('click', sortQuantity);
-document.addEventListener('load', sortAlphabetical);
+window.addEventListener('load', sortAlphabetical);
 
 
 /*toggle between hiding and showing the dropdown content */
