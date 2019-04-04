@@ -1,5 +1,6 @@
 'use strict';
 
+const DEBUG = true;
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -14,9 +15,8 @@ app.use(express.static('public'));
 app.use('/', (req, res, next) => { console.log(new Date(), req.method, req.url); next(); });
 
 //array that will store food objects
-let foodInFridge = [
+let foodInFridge = []
 
-]
 
 //reminder time variables
 let reminderTime = 2;
@@ -42,7 +42,7 @@ app.get('/indexAlphabetical', function(req,res) {
 
 });
 
-app.get('/indexecent', function(req,res) {
+app.get('/indexRecent', function(req,res) {
   res.send(foodInFridge);
 });
 
@@ -86,3 +86,22 @@ app.listen(8080, (err) => {
 
 
 ///Server functions
+
+function sortFood(type) {
+
+  // for debugging
+  if (DEBUG) {
+    console.log(type);
+  }
+
+  let copyList = foodInFridge;
+  if (type == 'quantity') {
+    copyList.sort(function(a,b) {return b.quantity - a.quantity});
+  } else if (type == 'alphabetical') {
+    copyList.sort(function(a,b) {return b.name - a.name});
+  } else if (type == 'recent') {
+    copyList.sort(function(a,b) {return b.expiry > a.expiry});
+  }
+  console.log(copyList)
+  return copyList;
+}

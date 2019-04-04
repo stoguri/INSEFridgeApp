@@ -1,10 +1,30 @@
 'use strict'
 
+document.getElementById('DropdownButton').addEventListener('click', showDropDown);
 document.getElementById('recent').addEventListener('click', sortRecent);
 document .getElementById('alphabetical').addEventListener('click', sortAlphabetical);
 document.getElementById('quantity').addEventListener('click', sortQuantity);
 window.addEventListener('load', sortAlphabetical);
 
+
+/*toggle between hiding and showing the dropdown content */
+function showDropDown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 
 //function to make requests to server for the array of food objects sorted by type.
@@ -14,7 +34,6 @@ async function sortQuantity() {
     const response = await fetch(url);
     if (!response.ok) throw response;
     const data = await response.json()
-    console.log(data);
     putListInPage(data);
   } catch (e) {
     console.error('error getting contents of fridge', e);
@@ -27,7 +46,6 @@ async function sortRecent() {
     const response = await fetch(url);
     if (!response.ok) throw response;
     const data = await response.json()
-    console.log(data);
     putListInPage(data);
   } catch(e) {
     console.error('error getting contents of fridge', e);
@@ -39,8 +57,7 @@ async function sortAlphabetical() {
     let url = '/indexAlphabetical';
     const response = await fetch(url);
     if (!response.ok) throw response;
-    const data = await response.json();
-    console.log(data);
+    const data = await response.json()
     putListInPage(data);
   } catch(e) {
     console.error('error getting contents of fridge', e);
