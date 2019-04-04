@@ -8,7 +8,7 @@ window.addEventListener('load', sortAlphabetical);
 // the list of food in the fridge everytime this page is loaded
 async function sortAlphabetical() {
   try {
-    let url = '/index/sort/alphabetical';
+    let url = '/indexAlphabetical';
     const response = await fetch(url);
     if (!response.ok) throw response;
     let text = await response.json()

@@ -21,15 +21,29 @@ let foodInFridge = [
 //reminder time variables
 let reminderTime = 2;
 
-// handles requests made on the /index path.
-//Sorts the items in the array of food objects, foodInFridge.
-app.get('/index/sort/:sortType', function (req, res) {
+app.get('/indexQuantity', function(req,res) {
+  let copyList = foodInFridge;
+  copyList.sort(function(a,b) {return b.quantity - a.quantity});
+  res.send(copyList);
+});
+
+app.get('/indexAlphabetical', function(req,res) {
   try {
-    let sortedlist = sortFood(req.params.sortType);
-    res.send(sortedlist);
+    let copyList2 = foodInFridge;
+    copyList2.sort(function(a, b){
+      if(a.name < b.name) { return -1; }
+      if(a.name > b.name) { return 1; }
+      return 0;
+    });
+    res.send(copyList2);
   } catch(e) {
-    console.error();
+    console.log(e);
   }
+
+});
+
+app.get('/indexecent', function(req,res) {
+  res.send(foodInFridge);
 });
 
 
@@ -72,18 +86,3 @@ app.listen(8080, (err) => {
 
 
 ///Server functions
-
-function sortFood(type) {
-  if (type == 'quantity') {
-    let copyList = foodInFridge;
-    copyList.sort(function(a,b) {return b.quantity - a.quantity});
-    return copyList;
-  }
-  else if (type == 'alphabetical') {
-    let copyList = foodInFridge;
-    copyList.sort(function(a,b) {return a.name - b.name});
-    return copyList;
-  } else {
-   return foodInFridge;
-  }
-}
