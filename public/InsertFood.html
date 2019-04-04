@@ -22,13 +22,15 @@
 
     <div id="inputDiv" class="form-style-6">
       <form id="inputForm" action="/inputFood" method="POST">
+        <label for="name">Name</label>
         <input id="inputName" type="text" name="name" placeholder="...apple" />
+        <label for="quantity">Quantity</label>
         <input id="inputQuantity" type="number" name="quantity" min="1" max="10" value="1"/>
+        <label for="expiry">Expiry</label>
         <input id="inputExpiry" type="date" name="expiry">
         <input id="inputSubmit" type="submit" value="Finish" />
       </form>
     </div>
   </div>
 
-  <script src="./InsertFood.js"></script>
  </body>

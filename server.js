@@ -32,6 +32,8 @@ app.get('/index/sort/:sortType', function (req, res) {
   }
 });
 
+
+//Handles input food requests
 app.post('/inputFood', urlencodedParser, function(req, res) {
   let request = req.body;
   //console.log(request);
@@ -39,12 +41,23 @@ app.post('/inputFood', urlencodedParser, function(req, res) {
   res.redirect('/InsertFood.html');
 });
 
+
+//Handles requests made on the /SetReminder path, updates reminder time
 app.post('/SetReminder', urlencodedParser, function (req,res) {
   let request = req.body.days;
   reminderTime = request;
   console.log('reminder time: ' + reminderTime);
   res.redirect('/SetReminder.html');
 });
+
+
+//Handles remove food requests, deletes the specified item from foodInFridge.
+app.post('/deleteFood', urlencodedParser, function(req, res) {
+  let removeIndex = foodInFridge.map(function(item) { return item.name; }).indexOf(req.body.name);
+  foodInFridge.splice(removeIndex, 1);
+  res.redirect('/DeleteFood.html')
+})
+
 
 
 //start the server
@@ -62,19 +75,15 @@ app.listen(8080, (err) => {
 
 function sortFood(type) {
   if (type == 'quantity') {
-    console.log(type);
     let copyList = foodInFridge;
     copyList.sort(function(a,b) {return b.quantity - a.quantity});
-    console.log(copyList)
     return copyList;
   }
   else if (type == 'alphabetical') {
     let copyList = foodInFridge;
     copyList.sort(function(a,b) {return a.name - b.name});
-    console.log(copyList)
     return copyList;
   } else {
-    console.log(foodInFridge)
    return foodInFridge;
   }
 }

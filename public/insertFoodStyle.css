@@ -23,6 +23,7 @@ body {
 
 .navbar {
   grid-area: navigation;
+  height: 100vh;
   width: 100%;
   background-color: #555;
   overflow: hidden;
@@ -37,11 +38,13 @@ body {
   color: white;
   text-decoration: none;
   font-size: 2vh;
+  transition: 0.2s
 }
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #000;
+  background-color: #FAEBD7;
+  color: black;
 }
 
 /* Current/active navbar link */
@@ -58,7 +61,7 @@ body {
 
 #inputDiv {
     grid-area: inputDiv;
-    height: 21vh;
+    height: 23vh;
     margin-top: 30vh;
 }
 
@@ -67,11 +70,13 @@ body {
 
 }
 
+
 .form-style-6{
+  text-align: left;
   border-radius: 2mm;
 	max-width: 400px;
 	margin: 10px auto;
-	padding: 16px;
+	padding: 20px;
 	background: #F7F7F7;
 }
 
