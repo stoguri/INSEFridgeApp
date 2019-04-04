@@ -54,9 +54,7 @@ async function sortAlphabetical() {
 //Deletes old list of food and inserts new list.
 function putListInPage(sortedList) {
   //delete old rows in <tbody>
-  for (old of document.querySelectorAll('tr.row')) {
-    old.remove();
-  }
+  document.querySelectorAll('tr.row').forEach(function(row){row.remove();});
 
   //create new rows and inserts them into <tbody>
   for (let i in sortedList) {
