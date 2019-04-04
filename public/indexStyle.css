@@ -23,6 +23,7 @@ body {
 
 .navbar {
   grid-area: navigation;
+  height: 100vh;
   width: 100%;
   background-color: #555;
   overflow: hidden;
@@ -37,11 +38,13 @@ body {
   color: white;
   text-decoration: none;
   font-size: 2vh;
+  transition: 0.2s;
 }
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #000;
+  background-color: #FAEBD7;
+  color: black;
 }
 
 /* Current/active navbar link */
@@ -68,9 +71,15 @@ table, th, td {
   border-radius: 10px;
   background-color: white;
   border-collapse: collapse;
+  transition: 0.2s;
 }
 th, td {
   padding: 15px;
+}
+
+
+ .hovertable tr:hover {
+  background-color: #5b9ee5;
 }
 
 /* Dropdown Button */

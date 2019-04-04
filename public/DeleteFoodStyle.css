@@ -18,11 +18,12 @@ body {
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
   grid-template-areas:
-  "navigation grid2"
+  "navigation delete list"
 }
 
 .navbar {
   grid-area: navigation;
+  height: 100vh;
   width: 100%;
   background-color: #555;
   overflow: hidden;
@@ -37,15 +38,18 @@ body {
   color: white;
   text-decoration: none;
   font-size: 2vh;
+  transition: 0.2s;
 }
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #000;
+  background-color: #FAEBD7;
+  color: black;
 }
 
 /* Current/active navbar link */
 .active {
+  height: 100%;
   background-color: #5b9ee5;
 }
 
@@ -54,4 +58,102 @@ body {
   .navbar a {
     font-size: 1em;
   }
+}
+
+/* Add scrollbar effect to list of food in fridge */
+#deleteFoodList {
+  grid-area: list;
+  background-color: white;
+  border-radius: 3px;
+  margin-top: 20vh;
+  margin-right: 15vw;
+  margin-left: 0px;
+  padding-left: 0pt;
+  max-width: 20vw;
+  max-height: 50vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  list-style: none;
+}
+
+.row {
+  border-radius: 3px;
+  padding: 10px;
+  margin-left: 0px;
+  transition: 0.2s;
+}
+
+.row:hover {
+  background-color: #5b9ee5;
+}
+
+.deleteFoodForm{
+  grid-area: delete;
+  display: inline-block;
+  margin-left: 17vw;
+  margin-right: 0pt;
+  margin-top: 47vh;
+  margin-bottom: auto;
+  border-radius: 2mm;
+	width: 400px;
+  max-height: 20vh;
+	padding: 16px;
+	background: #F7F7F7;
+}
+
+.deleteFoodForm input[type="text"],
+.deleteFoodForm input[type="date"],
+.deleteFoodForm input[type="number"],
+.deleteFoodForm input[type="submit"],
+.deleteFoodForm select
+{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 5%;
+	border: 1px solid #ccc;
+	padding: 1vh;
+	color: #555;
+	font: 95% Arial, Helvetica, sans-serif;
+}
+
+.deleteFoodForm input[type="number"],
+.deleteFoodForm input[type="text"]
+{
+  font-size: 2vh;
+}
+
+
+.deleteFoodForm input[type="submit"],
+.deleteFoodForm input[type="button"]{
+  font-size: 1vw;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #5b9ee5;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	color: #fff;
+}
+.deleteFoodForm input[type="submit"]:hover,
+.deleteFoodForm input[type="button"]:hover{
+	background: black;
+}
+
+.message{
+  color: white;
+  grid-area: message;
+  position: absolute;
+  margin-left: 32vw;
+  margin-top: 20vh;
+  font-size: 2vh;
 }

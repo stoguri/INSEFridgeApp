@@ -7,16 +7,37 @@
 	 <meta name="author" content="Sam Toguri 781439">
    <title>SmartFridge | Set Reminder</title>
    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-   <link rel="stylesheet" href="homeStyle.css">
+   <link rel="stylesheet" href="DeleteFoodStyle.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  </head>
 
  <body>
-   <div id="FridgeAppGrid" class="grid">
-     <div class="navbar">
-       <a href="index.html"><i class="fa fa-home"></i> Home</a>
-       <a href="InsertFood.html"><i class="fa fa-cutlery"></i> Insert Food</a>
-       <a href="SetReminder.html"><i class="fa fa-calendar"></i> Set Reminder Time</a>
-       <a class="active" href="DeleteFood.html"><i class="fa fa-trash"></i> Remove Food</a>
-     </div>
+  <div id="FridgeAppGrid" class="grid">
+   <div class="navbar">
+     <a href="index.html"><i class="fa fa-home"></i> Home</a>
+     <a href="InsertFood.html"><i class="fa fa-cutlery"></i> Insert Food</a>
+     <a href="SetReminder.html"><i class="fa fa-calendar"></i> Set Reminder Time</a>
+     <a class="active" href="DeleteFood.html"><i class="fa fa-trash"></i> Remove Food</a>
    </div>
+
+   <ul id="deleteFoodList">
+
+   </ul>
+
+   <div class="message">
+     Enter the name of food and Quantity to be deleted.<br> Press Finish to submit.
+   </div>
+
+   <form class="deleteFoodForm" action="/deleteFood" method="POST">
+     <label for="name">Food name</label>
+     <input type="text" name="name">
+     <label for="quantity">Quantity</label>
+     <input type="number" name="quantity" value="1" min=0>
+     <input type="submit" name="finish" value="Finish">
+   </form>
+
+ </body>
+ <script type="text/javascript" src="./DeleteFood.js">
+
+ </script>
+</html>
