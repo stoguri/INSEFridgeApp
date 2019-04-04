@@ -28,46 +28,33 @@ window.onclick = function(event) {
 
 
 //function to make requests to server for the array of food objects sorted by type.
-async function sortQuantity() {
+async function sort(type) {
   try {
-    let url = '/index/sort/quantity'
+    let url = '/index/sort/' + type;
     const response = await fetch(url);
     if (!response.ok) throw response;
-    const data = await response.json()
+    const data = await response.json();
     putListInPage(data);
   } catch (e) {
     console.error('error getting contents of fridge', e);
   }
 }
+async function sortQuantity() {
+  sort('quantity');
+}
 
 async function sortRecent() {
-  try {
-    let url = '/index/sort/recent';
-    const response = await fetch(url);
-    if (!response.ok) throw response;
-    const data = await response.json()
-    putListInPage(data);
-  } catch(e) {
-    console.error('error getting contents of fridge', e);
-  }
+  sort('recent');
 }
 
 async function sortAlphabetical() {
-  try {
-    let url = '/index/sort/alphabetical';
-    const response = await fetch(url);
-    if (!response.ok) throw response;
-    const data = await response.json()
-    putListInPage(data);
-  } catch(e) {
-    console.error('error getting contents of fridge', e);
-  }
+  sort('alphabetical');
 }
 
 //Deletes old list of food and inserts new list.
 function putListInPage(sortedList) {
   //delete old rows in <tbody>
-  for (const old of document.querySelectorAll('tr.row')) {
+  for (old of document.querySelectorAll('tr.row')) {
     old.remove();
   }
 
