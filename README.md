@@ -1,10 +1,10 @@
 # INSEFridgeApp
 
-
 SmartFridge Application:
+This application uses node.js to allow us to execute javascript outside of the browser.
 
 
-1) Install : change directory to ISNEFridgeApp and type npm install. 
+1) Install : in GitBash or other cmd, cd to INSEFridgeApp and type npm install. 
 
 
 2) Running: run the app by typing npm start
