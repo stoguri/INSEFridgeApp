@@ -49,6 +49,11 @@ app.get('/indexAlphabetical', function(req,res) {
 //foodInFridge stored in most recent order, so no sorting is required.
 app.get('/indexRecent', function(req,res) {
   let copyList3 = foodInFridge;
+  copyList3.sort(function(a, b){
+    if(a.expiry < b.expiry) { return -1; }
+    if(a.expiry > b.expiry) { return 1; }
+    return 0;
+  });
   res.send(copyList3);
 });
 

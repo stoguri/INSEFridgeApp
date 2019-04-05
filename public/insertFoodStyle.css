@@ -78,6 +78,7 @@ body {
 	margin: 10px auto;
 	padding: 20px;
 	background: #F7F7F7;
+  text-transform: capitalize;
 }
 
 .form-style-6 input[type="text"],
