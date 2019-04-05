@@ -15,7 +15,7 @@ This application uses node.js to allow us to execute javascript outside of the b
 
 Github usernames:
 
-stoguri -- stoguri (UP781439)
+stoguri -- Sam Toguri (UP781439)
 
 NM198 -- Nikolas Markides (UP876586)
 
