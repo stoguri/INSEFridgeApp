@@ -11,3 +11,16 @@ This application uses node.js to allow us to execute javascript outside of the b
 
 
 3) View: go to your browser and search http://localhost:8080
+
+
+Github usernames: 
+
+stoguri -- 
+
+NM198 -- Nikolas Markides (UP876586)
+
+LukeInse -- 
+
+Hartej-s --
+
+up848800 --
