@@ -1,6 +1,6 @@
 'use strict'
 
-
+//list is sorted alphabetically by default
 window.addEventListener('load', sortAlphabetical);
 
 
@@ -19,7 +19,7 @@ async function sortAlphabetical() {
   }
 }
 
-//Deletes old list of food and inserts new list.
+//Deletes old list of food and creates and inserts new list.
 function putListInPage(sortedList) {
   console.log('after server delete list: ' + sortedList);
   for (const old of document.querySelectorAll('li.row')) {
@@ -36,5 +36,10 @@ function putListInPage(sortedList) {
     document.getElementById('deleteFoodList').appendChild(newRow);
     index++ ;
   }
+}
 
+//ensures only letters can be entered into text input
+function lettersOnly(input) {
+  let regex = /[^a-z]/gi;
+  input.value = input.value.replace(regex, "");
 }

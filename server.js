@@ -6,27 +6,31 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-//create application/json parser
+//create aplication/json parser
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
-
 app.use(express.static('public'));
+//logging
 app.use('/', (req, res, next) => { console.log(new Date(), req.method, req.url); next(); });
 
 //array that will store food objects
 let foodInFridge = []
 
-
-//reminder time variables
+//Variable to store the number of days before food expires that a reminder is sent.
 let reminderTime = 2;
 
+// All sort-request handlers, sort a 'copList', of the original foodInFridge array so
+// that the original is a record of the most recently stored items.
+
+// Sort foodInFridge by quantity(descending)
 app.get('/indexQuantity', function(req,res) {
   let copyList = foodInFridge;
   copyList.sort(function(a,b) {return b.quantity - a.quantity});
   res.send(copyList);
 });
 
+//Sort foodInFridge alphabetically
 app.get('/indexAlphabetical', function(req,res) {
   try {
     let copyList2 = foodInFridge;
@@ -42,12 +46,15 @@ app.get('/indexAlphabetical', function(req,res) {
 
 });
 
+//foodInFridge stored in most recent order, so no sorting is required.
 app.get('/indexRecent', function(req,res) {
-  res.send(foodInFridge);
+  let copyList3 = foodInFridge;
+  res.send(copyList3);
 });
 
 
-//Handles input food requests
+// Handles input food requests
+// Uses unshift method to add new elements to the beginning of the array.
 app.post('/inputFood', urlencodedParser, function(req, res) {
   let request = req.body;
   //console.log(request);
@@ -79,29 +86,3 @@ app.listen(8080, (err) => {
   if (err) console.error('error starting server', err);
   else console.log('server started');
 });
-
-
-
-
-
-
-///Server functions
-
-function sortFood(type) {
-
-  // for debugging
-  if (DEBUG) {
-    console.log(type);
-  }
-
-  let copyList = foodInFridge;
-  if (type == 'quantity') {
-    copyList.sort(function(a,b) {return b.quantity - a.quantity});
-  } else if (type == 'alphabetical') {
-    copyList.sort(function(a,b) {return b.name - a.name});
-  } else if (type == 'recent') {
-    copyList.sort(function(a,b) {return b.expiry > a.expiry});
-  }
-  console.log(copyList)
-  return copyList;
-}

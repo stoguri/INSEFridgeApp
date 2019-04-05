@@ -30,14 +30,13 @@
 
    <form class="deleteFoodForm" action="/deleteFood" method="POST">
      <label for="name">Food name</label>
-     <input type="text" name="name">
+     <input type="text" name="name" placeholder="...apple" onkeyup="lettersOnly(this)"/>
      <label for="quantity">Quantity</label>
      <input type="number" name="quantity" value="1" min=0>
      <input type="submit" name="finish" value="Delete">
    </form>
  </div>
  </body>
- <script type="text/javascript" src="./DeleteFood.js">
 
- </script>
+ <script src="./DeleteFood.js"></script>
 </html>

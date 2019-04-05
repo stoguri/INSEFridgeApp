@@ -27,7 +27,7 @@ window.onclick = function(event) {
 }
 
 
-//function to make requests to server for the array of food objects sorted by type.
+//async functions to make GET requests to server for sorted copies of the array.
 async function sortQuantity() {
   try {
     let url = '/indexQuantity'
