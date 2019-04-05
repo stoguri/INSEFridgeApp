@@ -25,15 +25,15 @@
    </ul>
 
    <div class="message">
-     Enter the name of food and Quantity to be deleted.<br> Press Finish to submit.
+     Enter the name of food and quantity to be deleted.<br> Press Delete to submit.
    </div>
 
    <form class="deleteFoodForm" action="/deleteFood" method="POST">
      <label for="name">Food name</label>
-     <input type="text" name="name" placeholder="...apple" onkeyup="lettersOnly(this)"/>
+     <input type="text" name="name" placeholder="...apple" onkeyup="lettersOnly(this)" required/>
      <label for="quantity">Quantity</label>
      <input type="number" name="quantity" value="1" min=0>
-     <input type="submit" name="finish" value="Delete">
+     <input type="submit" name="finish" value="Delete" required>
    </form>
  </div>
  </body>

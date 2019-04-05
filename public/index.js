@@ -30,7 +30,7 @@ window.onclick = function(event) {
 //async functions to make GET requests to server for sorted copies of the array.
 async function sortQuantity() {
   try {
-    let url = '/indexQuantity'
+    let url = '/indexQuantity';
     const response = await fetch(url);
     if (!response.ok) throw response;
     const data = await response.json()
